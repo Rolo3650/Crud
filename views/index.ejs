@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jugadores</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Quicksand", sans-serif;
+        }
+
+        .nav {
+            background: linear-gradient(rgb(121, 13, 40), rgb(184, 13, 84));
+            height: 6rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .nav img {
+            position: absolute;
+            left: 5%;
+            top: 10%;
+            height: 80%;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .nav h1 {
+            margin: 0;
+            position: relative;
+            top: 30%;
+            color: white;
+            font-size: 2rem;
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        section .contenedor-jugadores {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        section .contenedor-jugadores .agregar-jugador img,
+        section .contenedor-jugadores .jugador img {
+            margin-top: 20px;
+            height: 5rem;
+        }
+
+        section .contenedor-jugadores .agregar-jugador img {
+            cursor: pointer;
+        }
+
+        section .contenedor-jugadores .agregar-jugador,
+        section .contenedor-jugadores .jugador {
+            display: inline-block;
+            margin-left: 30px;
+            margin-top: 30px;
+            width: 200px;
+            height: 250px;
+            border: 5px rgb(121, 13, 80) solid;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px 5px rgb(121, 13, 80);
+        }
+
+        section .contenedor-jugadores .jugador .submit {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+            border: none;
+            color: white;
+            background-color: rgb(121, 13, 80);
+            transition: all .3s;
+        }
+
+        section .contenedor-jugadores .jugador .submit:hover {
+            cursor: pointer;
+            box-shadow: 0 5px 20px 1px rgb(121, 13, 80);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjOvjzsnX8ZuRAu3Q6rd6zcTB1blNargpKl1VSaaF-sCK6rhNTisThXPHyCMJWeVaO1QieP6EDTrMzPmH4TDlyLPAwgrmx7lkk-njAt6j1y1BQbYw5WLpi-kchbmbI55I4ShjCCGYpO7iCwd_2ZnKBl81v1bivlj5V_vZuNDh7TW9jlMU0iMQorng19/s16000/Qatar2022.png"
+            alt="">
+        <h1>FIFA WORLD CUP 2022</h1>
+    </nav>
+    <section class="section">
+        <h1>Jugadores</h1>
+        <div class="contenedor-jugadores">
+            <div class="agregar-jugador">
+                <a href="/agregar">
+                    <img src="data:image/png;base64,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"
+                        alt="">
+
+                </a>
+                <h3>Agregar Jugador</h3>
+            </div>
+            <% result.forEach(jugador=> {%>
+                <div class="jugador">
+                    <img src="https://cdn-icons-png.flaticon.com/512/59/59170.png">
+                    <h3>
+                        <%=jugador.nombre%>
+                    </h3>
+                    <form action="Consultar-Jugador" method="POST">
+                        <input type="hidden" id="id_jugador" name="id_jugador" value=<%=jugador.id_jugador%>>
+                        <input type="submit" value="Consultar" class="submit">
+                    </form>
+                </div>
+                <% }) %>
+        </div>
+    </section>
+</body>
+
+</html>
