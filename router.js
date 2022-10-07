@@ -33,7 +33,7 @@ router.post('/agregar-jugador', (req, res) => {
     const calificacion = req.body.calificacion;
     const seleccion = req.body.seleccion;
     const posicion = req.body.posicion;
-    con.query("INSERT INTO `mydb`.`jugador` (`nombre`, `calificacion`, `id_seleccion`, `id_posicion`) VALUES ('"+nombre+"', '"+calificacion+"', '"+seleccion+"', '"+posicion+"');", (error, result) => {
+    con.query("INSERT INTO `jugador` (`nombre`, `calificacion`, `id_seleccion`, `id_posicion`) VALUES ('"+nombre+"', '"+calificacion+"', '"+seleccion+"', '"+posicion+"');", (error, result) => {
         if (error) {
             console.error(error);
         } else {
@@ -49,7 +49,7 @@ router.post('/agregar-jugador', (req, res) => {
 });
 
 router.post('/eliminar', (req, res) => {
-    con.query("DELETE FROM `mydb`.`jugador` WHERE (`id_jugador` = '"+req.body.id+"')", (error, result) => {
+    con.query("DELETE FROM `jugador` WHERE (`id_jugador` = '"+req.body.id+"')", (error, result) => {
         if (error) {
             console.error(error);
         } else {
@@ -79,7 +79,7 @@ router.post('/editar-jugador', (req, res) => {
     const calificacion = req.body.calificacion;
     const seleccion = req.body.seleccion;
     const posicion = req.body.posicion;
-    con.query("UPDATE `mydb`.`jugador` SET `nombre` = '"+nombre+"', `calificacion` = '"+calificacion+"', `id_seleccion` = '"+seleccion+"', `id_posicion` = '"+posicion+"' WHERE (`id_jugador` = '"+id+"');", (error, result) => {
+    con.query("UPDATE `jugador` SET `nombre` = '"+nombre+"', `calificacion` = '"+calificacion+"', `id_seleccion` = '"+seleccion+"', `id_posicion` = '"+posicion+"' WHERE (`id_jugador` = '"+id+"');", (error, result) => {
         if (error) {
             console.error(error);
         } else {
